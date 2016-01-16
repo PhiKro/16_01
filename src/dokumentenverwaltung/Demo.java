@@ -23,8 +23,12 @@ public class Demo {
 		csv1.addLine("Das auch");
 		csv1.printDocument();
 		
-		Document csvDoc2 = new CsvDocument("Doc2", csvContent); //Polymorphie 
-		csvDoc2.printDocument();
+		Document csvDoc2 = new CsvDocument("Doc2", csvContent);  // Upcasting Verwenden der Basisklasse für ein Objekt der Erbenden Klasse 
+		csvDoc2.printDocument();//Polymorphie
 		
+		CsvDocument csvDoc3 = (CsvDocument)csvDoc2; // Downcasting Übertragen eines Objekts mit korrekten eigenschaften auf ein Objekt einer darunterliegenden Klasse. 
+		
+		csvDoc3.addLine("Test, nach dem Downcast");
+		csvDoc3.printDocument();
 	}
 }
