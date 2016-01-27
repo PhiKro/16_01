@@ -27,8 +27,22 @@ public class Demo {
 		csvDoc2.printDocument();//Polymorphie
 		
 		CsvDocument csvDoc3 = (CsvDocument)csvDoc2; // Downcasting Übertragen eines Objekts mit korrekten eigenschaften auf ein Objekt einer darunterliegenden Klasse. 
-		
+													// Der in Klammer gesetzte Datentyp überschreibt den besteheneden Datentyp des Objekts.
 		csvDoc3.addLine("Test, nach dem Downcast");
 		csvDoc3.printDocument();
+		
+		ArrayList<Document> printMe = new ArrayList<>();
+		printMe.add(csvDoc3);
+		System.out.println("------------------");
+		System.out.println("------------------");
+		
+		PrintManager printMa = new PrintManager(printMe);
+		printMa.printAll();
+		System.out.println("------------------");
+		System.out.println("------------------");
+		printMa.addDocument(csvDoc2);
+		printMa.addDocument(Bild);
+		printMa.addDocument(Text);
+		printMa.printAll();
 	}
 }

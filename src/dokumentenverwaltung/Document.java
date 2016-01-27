@@ -11,5 +11,11 @@ public class Document
 	{
 		System.out.println(fileName);
 	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 
 }
